@@ -4,7 +4,7 @@ class Controller
 {
     public function Model($model)
     {
-        require_once '../aap/models/' . $model . '.php';
+        require_once '../app/models/' . $model . '.php';
 
         //instantiet
         return new $model();
