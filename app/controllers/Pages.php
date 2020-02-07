@@ -1,17 +1,25 @@
 <?php
 
-class Pages
+class Pages extends Controller
 {
     public function __construct()
     {
     }
     public function index()
     {
-        echo 'default index';
+        $data = [
+            'title' => 'Welcome'
+        ];
+        $this->view('pages/index', $data);
     }
 
-    public function about($param)
+
+
+    public function about()
     {
-        echo $param;
+        $data = [
+            'title' => 'about'
+        ];
+        $this->view('pages/about', $data);
     }
 }
