@@ -4,6 +4,14 @@ class Pages
 {
     public function __construct()
     {
-        echo 'pages loaded';
+    }
+    public function index()
+    {
+        echo 'default index';
+    }
+
+    public function about($param)
+    {
+        echo $param;
     }
 }
