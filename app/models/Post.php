@@ -9,7 +9,7 @@ class Post
     }
     public function getPosts()
     {
-        $this->db->query("SELECT * FROM post");
+        $this->db->query("SELECT * FROM mvcphp.post ");
 
         return $this->db->resultSet();
     }

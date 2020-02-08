@@ -23,16 +23,20 @@ class Database
         //echo $dsn;
         try {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
-            // echo $this->dbh;
+            echo 'conected';
         } catch (PDOException $e) {
             $this->error = $e->getMessage();
             echo 'bla' . $this->error;
         }
     }
+
     //prepare statment with query
     public function query($sql)
     {
+        //echo 'q';
         $this->stmt = $this->dbh->prepare($sql);
+        //print_r($this->stmt);
+        //print_r($this->dbh);
     }
     public function bind($param, $value, $type = null)
     {
@@ -52,11 +56,12 @@ class Database
             };
         }
         $this->stmt->bindValue($param, $value, $type);
+        // print_r($this->stmt);
     }
     public function execute()
     {
+
         return $this->stmt->execute();
-        //echo $this->stmt;
     }
 
     // get result set as arr of obj
